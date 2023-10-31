@@ -1,0 +1,46 @@
+<main class="content" *ngIf="showProductList">
+    <div class="container-fluid p-0">
+        <div class="row">
+            <div class="col-12 col-xxl-9 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Product List</h5>
+                    </div>
+                    <table class="table table-hover my-0">
+                        <thead>
+                            <tr>
+                                <th class="d-none d-xl-table-cell">Sr. No.</th>
+                                <th>Title</th>
+                                <th>Price</th>
+                                <th class="d-none d-md-table-cell">Category</th>
+                                <th >Action</th>
+                                <th >Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product of products">
+                                <td class="d-none d-xl-table-cell">{{product.id}}</td>
+                                <td>{{product.title}}</td>
+                                <td><span class="badge bg-success">$ {{product.price}}</span></td>
+                                <td class="d-none d-md-table-cell text-capitalize">{{product.category}}</td>
+                                <td class="d-none d-xl-table-cell">
+                                    <button type="button" 
+                                            class="btn btn-outline-primary btn-sm"
+                                            (click)="onViewProductDetail(product.id)"
+                                            >SHOW</button>
+                                </td>
+                                <td class="d-none d-xl-table-cell">
+                                    <button type="button" 
+                                            class="btn btn-outline-primary btn-sm"
+                                            (click)="onAddProductToCart(product.id)"
+                                            >ADD TO CART</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<router-outlet *ngIf="!showProductList"></router-outlet>

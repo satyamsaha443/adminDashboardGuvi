@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Sales",
+        "amount": 2.382,
+        "percentage": "-3.65%",
+        "time_period": "Since last week",
+        "status": "loss"
+    },
+    {
+        "title": "Vistiors",
+        "amount": 14.212,
+        "percentage": "-5.25%",
+        "time_period": "Since last week",
+        "status": "profit"  
+    },
+    {
+        "title": "Earings",
+        "amount": 21.300,
+        "percentage": "6.65%",
+        "time_period": "Since last week",
+        "status": "profit"  
+    },
+    {
+        "title": "Orders",
+        "amount": 64,
+        "percentage": "-2.25%%",
+        "time_period": "Since last week",
+        "status": "loss"  
+    }
+]

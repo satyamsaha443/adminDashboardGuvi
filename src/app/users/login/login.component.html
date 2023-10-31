@@ -1,0 +1,45 @@
+<main class="content">
+    <div class="container-fluid p-0">
+        <h1 class="h3 mb-3">USER LOGIN</h1>
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-6">
+                <div class="card">
+                    <div class="m-sm-3">
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input 
+                                class="form-control form-control-lg" 
+                                type="text" 
+                                formControlName="email" 
+                                placeholder="Enter your email" />
+                                <span
+                                *ngIf="!getFormControl('email').valid && getFormControl('email').touched"
+                                class="help-block text-danger mt-3"
+                                >
+                                    <span *ngIf="getFormControl('email').errors?.['required']">This field is required</span>
+                                </span>
+                                <span *ngIf="getFormControl('email').errors?.['email']" class="text-danger">Please enter valid email</span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password</label>
+                                <input 
+                                class="form-control form-control-lg" 
+                                type="password" 
+                                formControlName="password" 
+                                placeholder="Enter your password" />
+                                <span
+                                *ngIf="!getFormControl('password').valid && getFormControl('password').touched"
+                                class="help-block text-danger mt-3"
+                                >
+                                    <span *ngIf="getFormControl('password').errors['required']">This field is required</span>
+                                    <span *ngIf="getFormControl('password').errors['minlength']">Password must be at least 3 characters long</span>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

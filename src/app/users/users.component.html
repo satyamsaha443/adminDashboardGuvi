@@ -1,0 +1,48 @@
+<main class="content" *ngIf="showUserList">
+    <div class="container-fluid p-0">
+        <div class="row">
+            <div class="col-12 col-xxl-9 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">User List</h5>
+                    </div>
+                    <table class="table table-hover my-0">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th class="d-none d-xl-table-cell">Email</th>
+                                <th class="d-none d-xl-table-cell">Address</th>
+                                <th>Phone</th>
+                                <th class="d-none d-md-table-cell">Gender</th>
+                                <th >Action</th>
+                                <th >Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of users">
+                                <td>{{user.first_name}}</td>
+                                <td class="d-none d-xl-table-cell">{{user.email}}</td>
+                                <td class="d-none d-xl-table-cell">{{user.address}}</td>
+                                <td><span class="badge bg-success">{{user.phone}}</span></td>
+                                <td class="d-none d-md-table-cell">{{user.gender}}</td>
+                                <td class="d-none d-xl-table-cell">
+                                    <button type="button" 
+                                            class="btn btn-outline-primary btn-sm"
+                                            (click)="onUserEdit(user.id)"
+                                            >EDIT</button>
+                                </td>
+                                <td class="d-none d-xl-table-cell">
+                                    <button type="button" 
+                                            class="btn btn-outline-primary btn-sm"
+                                            (click)="onUserView(user.id)"
+                                            >VIEW</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<router-outlet *ngIf="!showUserList"></router-outlet>
